@@ -16,9 +16,12 @@
       "collection": "subjects"
     },
     "streams": {
-      "via": "classes",
       "collection": "streams",
+      "via": "classes",
       "dominant": true
+    },
+    "code": {
+      "type": "string"
     }
   }
 }

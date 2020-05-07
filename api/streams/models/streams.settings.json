@@ -18,8 +18,8 @@
       "dominant": true
     },
     "classes": {
-      "collection": "classes",
-      "via": "streams"
+      "via": "streams",
+      "collection": "classes"
     }
   }
 }
