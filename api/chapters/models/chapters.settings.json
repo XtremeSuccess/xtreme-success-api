@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapters",
+  "info": {
+    "name": "Chapters"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "short_desc": {
+      "type": "string"
+    },
+    "class": {
+      "model": "classes"
+    },
+    "subject": {
+      "model": "subjects"
+    },
+    "chapter_details": {
+      "model": "chapter-details"
+    }
+  }
+}

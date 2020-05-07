@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "streams",
+  "info": {
+    "name": "Streams"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "subjects": {
+      "collection": "subjects",
+      "via": "streams",
+      "dominant": true
+    },
+    "classes": {
+      "collection": "classes",
+      "via": "streams"
+    }
+  }
+}

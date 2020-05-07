@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subjects",
+  "info": {
+    "name": "Subjects"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "streams": {
+      "via": "subjects",
+      "collection": "streams"
+    }
+  }
+}
