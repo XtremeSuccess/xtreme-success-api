@@ -614,6 +614,9 @@
                 },
                 "class": {
                   "type": "string"
+                },
+                "img": {
+                  "type": "string"
                 }
               }
             }
