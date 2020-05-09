@@ -543,35 +543,35 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "chapters": {
+                  "type": "string"
                 }
               }
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "subjects": {
-                  "type": "string"
-                },
-                "streams": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "code": {
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "subjects": {
+                "type": "string"
               }
             }
           }
@@ -588,11 +588,8 @@
               "type": "string"
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "class": {
+            "type": "string"
           }
         }
       }

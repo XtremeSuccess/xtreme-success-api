@@ -528,50 +528,6 @@
           "short_desc": {
             "type": "string"
           },
-          "class": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "subjects": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "code": {
-                "type": "string"
-              }
-            }
-          },
-          "subject": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "chapter_details": {
             "required": [
               "id"
@@ -593,12 +549,6 @@
             "type": "string"
           },
           "short_desc": {
-            "type": "string"
-          },
-          "class": {
-            "type": "string"
-          },
-          "subject": {
             "type": "string"
           },
           "chapter_details": {

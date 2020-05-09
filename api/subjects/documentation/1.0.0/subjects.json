@@ -544,12 +544,28 @@
                     "type": "string"
                   }
                 },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "class": {
+                  "type": "string"
                 }
+              }
+            }
+          },
+          "chapters": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "short_desc": {
+                "type": "string"
+              },
+              "chapter_details": {
+                "type": "string"
               }
             }
           }
@@ -565,6 +581,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "chapters": {
+            "type": "string"
           }
         }
       }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/08/2020 5:56:14 PM"
+    "x-generation-date": "05/09/2020 11:31:57 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5316,50 +5316,6 @@
           "short_desc": {
             "type": "string"
           },
-          "class": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "subjects": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "code": {
-                "type": "string"
-              }
-            }
-          },
-          "subject": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "chapter_details": {
             "required": [
               "id"
@@ -5383,12 +5339,6 @@
           "short_desc": {
             "type": "string"
           },
-          "class": {
-            "type": "string"
-          },
-          "subject": {
-            "type": "string"
-          },
           "chapter_details": {
             "type": "string"
           }
@@ -5405,24 +5355,8 @@
           "name": {
             "type": "string"
           },
-          "subjects": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
+          "code": {
+            "type": "string"
           },
           "streams": {
             "type": "array",
@@ -5443,17 +5377,33 @@
                     "type": "string"
                   }
                 },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "class": {
+                  "type": "string"
                 }
               }
             }
           },
-          "code": {
-            "type": "string"
+          "subjects": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "chapters": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -5462,7 +5412,7 @@
           "name": {
             "type": "string"
           },
-          "subjects": {
+          "code": {
             "type": "string"
           },
           "streams": {
@@ -5471,7 +5421,7 @@
               "type": "string"
             }
           },
-          "code": {
+          "subjects": {
             "type": "string"
           }
         }
@@ -5507,7 +5457,7 @@
               "name": {
                 "type": "string"
               },
-              "subjects": {
+              "code": {
                 "type": "string"
               },
               "streams": {
@@ -5516,7 +5466,7 @@
                   "type": "string"
                 }
               },
-              "code": {
+              "subjects": {
                 "type": "string"
               }
             }
@@ -5538,11 +5488,8 @@
                   "type": "string"
                 }
               },
-              "classes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "class": {
+                "type": "string"
               }
             }
           },
@@ -5562,6 +5509,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "chapters": {
+                "type": "string"
               }
             }
           }
@@ -5621,35 +5571,35 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "chapters": {
+                  "type": "string"
                 }
               }
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "subjects": {
-                  "type": "string"
-                },
-                "streams": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "code": {
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "subjects": {
+                "type": "string"
               }
             }
           }
@@ -5666,11 +5616,8 @@
               "type": "string"
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "class": {
+            "type": "string"
           }
         }
       },
@@ -5704,12 +5651,28 @@
                     "type": "string"
                   }
                 },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "class": {
+                  "type": "string"
                 }
+              }
+            }
+          },
+          "chapters": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "short_desc": {
+                "type": "string"
+              },
+              "chapter_details": {
+                "type": "string"
               }
             }
           }
@@ -5725,6 +5688,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "chapters": {
+            "type": "string"
           }
         }
       },
@@ -5961,7 +5927,7 @@
               "name": {
                 "type": "string"
               },
-              "subjects": {
+              "code": {
                 "type": "string"
               },
               "streams": {
@@ -5970,7 +5936,7 @@
                   "type": "string"
                 }
               },
-              "code": {
+              "subjects": {
                 "type": "string"
               }
             }

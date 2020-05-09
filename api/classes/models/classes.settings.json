@@ -12,16 +12,15 @@
     "name": {
       "type": "string"
     },
-    "subjects": {
-      "collection": "subjects"
+    "code": {
+      "type": "string"
     },
     "streams": {
       "collection": "streams",
-      "via": "classes",
-      "dominant": true
+      "via": "class"
     },
-    "code": {
-      "type": "string"
+    "subjects": {
+      "collection": "subjects"
     }
   }
 }

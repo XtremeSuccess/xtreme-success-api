@@ -13,13 +13,7 @@
       "type": "string"
     },
     "short_desc": {
-      "type": "string"
-    },
-    "class": {
-      "model": "classes"
-    },
-    "subject": {
-      "model": "subjects"
+      "type": "text"
     },
     "chapter_details": {
       "model": "chapter-details"

@@ -13,8 +13,11 @@
       "type": "string"
     },
     "streams": {
-      "via": "subjects",
-      "collection": "streams"
+      "collection": "streams",
+      "via": "subjects"
+    },
+    "chapters": {
+      "collection": "chapters"
     }
   }
 }

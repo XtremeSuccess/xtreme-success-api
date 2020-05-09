@@ -1287,7 +1287,7 @@
               "name": {
                 "type": "string"
               },
-              "subjects": {
+              "code": {
                 "type": "string"
               },
               "streams": {
@@ -1296,7 +1296,7 @@
                   "type": "string"
                 }
               },
-              "code": {
+              "subjects": {
                 "type": "string"
               }
             }

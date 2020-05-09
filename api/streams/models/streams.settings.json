@@ -13,13 +13,13 @@
       "type": "string"
     },
     "subjects": {
-      "collection": "subjects",
       "via": "streams",
+      "collection": "subjects",
       "dominant": true
     },
-    "classes": {
+    "class": {
       "via": "streams",
-      "collection": "classes"
+      "model": "classes"
     }
   }
 }
