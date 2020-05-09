@@ -534,31 +534,6 @@
           "price": {
             "type": "number"
           },
-          "class": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "code": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "subjects": {
-                "type": "string"
-              }
-            }
-          },
           "stream": {
             "required": [
               "id"
@@ -602,6 +577,37 @@
                 "type": "string"
               }
             }
+          },
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "subjects": {
+                "type": "string"
+              },
+              "courses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -619,13 +625,13 @@
           "price": {
             "type": "number"
           },
-          "class": {
-            "type": "string"
-          },
           "stream": {
             "type": "string"
           },
           "subjects": {
+            "type": "string"
+          },
+          "class": {
             "type": "string"
           }
         }

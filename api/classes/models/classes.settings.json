@@ -21,6 +21,10 @@
     },
     "subjects": {
       "collection": "subjects"
+    },
+    "courses": {
+      "collection": "courses",
+      "via": "class"
     }
   }
 }

@@ -21,14 +21,15 @@
     "price": {
       "type": "decimal"
     },
-    "class": {
-      "model": "classes"
-    },
     "stream": {
       "model": "streams"
     },
     "subjects": {
       "collection": "subjects"
+    },
+    "class": {
+      "via": "courses",
+      "model": "classes"
     }
   }
 }

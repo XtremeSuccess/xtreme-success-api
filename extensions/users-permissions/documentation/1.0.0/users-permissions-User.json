@@ -1265,13 +1265,13 @@
               "price": {
                 "type": "number"
               },
-              "class": {
-                "type": "string"
-              },
               "stream": {
                 "type": "string"
               },
               "subjects": {
+                "type": "string"
+              },
+              "class": {
                 "type": "string"
               }
             }
@@ -1298,6 +1298,12 @@
               },
               "subjects": {
                 "type": "string"
+              },
+              "courses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }

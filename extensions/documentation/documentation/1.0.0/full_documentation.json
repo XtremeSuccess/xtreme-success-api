@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/09/2020 11:31:57 AM"
+    "x-generation-date": "05/09/2020 11:59:49 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5404,6 +5404,40 @@
                 "type": "string"
               }
             }
+          },
+          "courses": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "duration": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "stream": {
+                  "type": "string"
+                },
+                "subjects": {
+                  "type": "string"
+                },
+                "class": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -5423,6 +5457,12 @@
           },
           "subjects": {
             "type": "string"
+          },
+          "courses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -5445,31 +5485,6 @@
           },
           "price": {
             "type": "number"
-          },
-          "class": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "code": {
-                "type": "string"
-              },
-              "streams": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "subjects": {
-                "type": "string"
-              }
-            }
           },
           "stream": {
             "required": [
@@ -5514,6 +5529,37 @@
                 "type": "string"
               }
             }
+          },
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "streams": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "subjects": {
+                "type": "string"
+              },
+              "courses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -5531,13 +5577,13 @@
           "price": {
             "type": "number"
           },
-          "class": {
-            "type": "string"
-          },
           "stream": {
             "type": "string"
           },
           "subjects": {
+            "type": "string"
+          },
+          "class": {
             "type": "string"
           }
         }
@@ -5600,6 +5646,12 @@
               },
               "subjects": {
                 "type": "string"
+              },
+              "courses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -5905,13 +5957,13 @@
               "price": {
                 "type": "number"
               },
-              "class": {
-                "type": "string"
-              },
               "stream": {
                 "type": "string"
               },
               "subjects": {
+                "type": "string"
+              },
+              "class": {
                 "type": "string"
               }
             }
@@ -5938,6 +5990,12 @@
               },
               "subjects": {
                 "type": "string"
+              },
+              "courses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
