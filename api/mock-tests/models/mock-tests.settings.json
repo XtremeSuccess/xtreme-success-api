@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mock_tests",
+  "info": {
+    "name": "Mock Tests"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "chapter": {
+      "model": "chapters",
+      "via": "mock_tests"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

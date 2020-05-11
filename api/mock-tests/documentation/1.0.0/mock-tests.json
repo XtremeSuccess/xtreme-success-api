@@ -1,18 +1,19 @@
 {
   "paths": {
-    "/chapters": {
+    "/mock-tests": {
       "get": {
         "deprecated": false,
-        "description": "Find all the chapters's records",
+        "description": "Find all the mock-tests's records",
         "responses": {
           "200": {
-            "description": "Retrieve chapters document(s)",
+            "description": "Retrieve mock-tests document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Chapters"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Chapters"
+          "Mock-tests"
         ],
         "parameters": [
           {
@@ -194,79 +195,16 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new chapters record",
+        "description": "Create a new mock-tests record",
         "responses": {
           "200": {
-            "description": "Retrieve chapters document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Chapters"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Chapters"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewChapters"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/chapters/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of chapters documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve chapters document(s)",
+            "description": "Retrieve mock-tests document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,22 +244,36 @@
         },
         "summary": "",
         "tags": [
-          "Chapters"
+          "Mock-tests"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMock-tests"
+              }
+            }
+          }
+        }
       }
     },
-    "/chapters/{id}": {
+    "/mock-tests/count": {
       "get": {
         "deprecated": false,
-        "description": "Find one chapters record",
+        "description": "Retrieve the numver of mock-tests documents",
         "responses": {
           "200": {
-            "description": "Retrieve chapters document(s)",
+            "description": "Retrieve mock-tests document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Chapters"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Chapters"
+          "Mock-tests"
+        ],
+        "parameters": []
+      }
+    },
+    "/mock-tests/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one mock-tests record",
+        "responses": {
+          "200": {
+            "description": "Retrieve mock-tests document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Mock-tests"
         ],
         "parameters": [
           {
@@ -376,14 +385,18 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single chapters record",
+        "description": "Update a single mock-tests record",
         "responses": {
           "200": {
-            "description": "Retrieve chapters document(s)",
+            "description": "Retrieve mock-tests document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Chapters"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Chapters"
+          "Mock-tests"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewChapters"
+                "$ref": "#/components/schemas/NewMock-tests"
               }
             }
           }
@@ -449,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single chapters record",
+        "description": "Delete a single mock-tests record",
         "responses": {
           "200": {
-            "description": "deletes a single chapters based on the ID supplied",
+            "description": "deletes a single mock-tests based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Chapters"
+          "Mock-tests"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Chapters": {
+      "Mock-tests": {
         "required": [
           "id"
         ],
@@ -522,13 +535,10 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "Name": {
             "type": "string"
           },
-          "short_desc": {
-            "type": "string"
-          },
-          "chapter_details": {
+          "chapter": {
             "required": [
               "id"
             ],
@@ -536,59 +546,42 @@
               "id": {
                 "type": "string"
               },
-              "text": {
+              "name": {
                 "type": "string"
-              }
-            }
-          },
-          "mock_tests": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Name": {
-                  "type": "string"
-                },
-                "chapter": {
-                  "type": "string"
-                },
-                "content": {
+              },
+              "short_desc": {
+                "type": "string"
+              },
+              "chapter_details": {
+                "type": "string"
+              },
+              "mock_tests": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
               }
             }
+          },
+          "content": {
+            "type": "string"
           }
         }
       },
-      "NewChapters": {
+      "NewMock-tests": {
         "properties": {
-          "name": {
+          "Name": {
             "type": "string"
           },
-          "short_desc": {
+          "chapter": {
             "type": "string"
           },
-          "chapter_details": {
+          "content": {
             "type": "string"
-          },
-          "mock_tests": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       }
     }
   },
-  "tags": [
-    {
-      "name": "Chapters"
-    }
-  ]
+  "tags": []
 }

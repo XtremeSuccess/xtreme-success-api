@@ -17,6 +17,10 @@
     },
     "chapter_details": {
       "model": "chapter-details"
+    },
+    "mock_tests": {
+      "via": "chapter",
+      "collection": "mock-tests"
     }
   }
 }

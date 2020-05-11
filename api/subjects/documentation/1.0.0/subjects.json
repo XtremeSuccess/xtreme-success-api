@@ -566,6 +566,12 @@
               },
               "chapter_details": {
                 "type": "string"
+              },
+              "mock_tests": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }

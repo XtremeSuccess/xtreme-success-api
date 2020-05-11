@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mock-tests",
+      "handler": "mock-tests.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mock-tests/count",
+      "handler": "mock-tests.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/mock-tests/:id",
+      "handler": "mock-tests.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/mock-tests",
+      "handler": "mock-tests.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mock-tests/:id",
+      "handler": "mock-tests.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mock-tests/:id",
+      "handler": "mock-tests.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
