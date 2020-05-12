@@ -1,6 +1,6 @@
 {
   "kind": "collectionType",
-  "collectionName": "user_details",
+  "collectionName": "userdetails",
   "info": {
     "name": "User Details"
   },
@@ -43,6 +43,11 @@
     },
     "subscription": {
       "model": "subscriptions"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "user_detail"
     }
   }
 }

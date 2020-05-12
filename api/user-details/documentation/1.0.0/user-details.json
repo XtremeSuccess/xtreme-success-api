@@ -638,6 +638,45 @@
                 "type": "string"
               }
             }
+          },
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "user_detail": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -665,6 +704,9 @@
             "type": "string"
           },
           "subscription": {
+            "type": "string"
+          },
+          "user": {
             "type": "string"
           }
         }

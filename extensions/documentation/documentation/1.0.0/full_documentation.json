@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/12/2020 11:05:37 PM"
+    "x-generation-date": "05/12/2020 11:11:19 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7564,6 +7564,45 @@
                 "type": "string"
               }
             }
+          },
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "user_detail": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -7591,6 +7630,9 @@
             "type": "string"
           },
           "subscription": {
+            "type": "string"
+          },
+          "user": {
             "type": "string"
           }
         }
@@ -7683,6 +7725,9 @@
                   "type": "boolean"
                 },
                 "role": {
+                  "type": "string"
+                },
+                "user_detail": {
                   "type": "string"
                 }
               }
@@ -7779,6 +7824,49 @@
                 }
               }
             }
+          },
+          "user_detail": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "img": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parent_name": {
+                "type": "string"
+              },
+              "school_name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "mobile_number": {
+                "type": "string"
+              },
+              "parent_mobile_number": {
+                "type": "string"
+              },
+              "subscription": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -7815,6 +7903,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "user_detail": {
             "type": "string"
           }
         }

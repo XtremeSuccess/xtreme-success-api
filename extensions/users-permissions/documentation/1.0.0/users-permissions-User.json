@@ -1244,6 +1244,49 @@
                 }
               }
             }
+          },
+          "user_detail": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "img": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parent_name": {
+                "type": "string"
+              },
+              "school_name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "mobile_number": {
+                "type": "string"
+              },
+              "parent_mobile_number": {
+                "type": "string"
+              },
+              "subscription": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1280,6 +1323,9 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "user_detail": {
             "type": "string"
           }
         }

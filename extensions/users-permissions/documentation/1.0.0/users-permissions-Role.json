@@ -608,6 +608,9 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "user_detail": {
+                  "type": "string"
                 }
               }
             }
