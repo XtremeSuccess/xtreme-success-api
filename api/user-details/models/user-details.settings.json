@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_details",
+  "info": {
+    "name": "User Details"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "img": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "parent_name": {
+      "type": "string"
+    },
+    "school_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "mobile_number": {
+      "type": "string"
+    },
+    "parent_mobile_number": {
+      "type": "string"
+    },
+    "subscription": {
+      "model": "subscriptions"
+    }
+  }
+}
