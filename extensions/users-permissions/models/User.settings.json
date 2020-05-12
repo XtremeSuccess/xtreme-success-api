@@ -53,22 +53,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "course": {
-      "model": "courses"
-    },
-    "class": {
-      "model": "classes"
-    },
-    "img": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
+    "user_detail": {
+      "via": "user",
+      "model": "user-details"
     }
   }
 }

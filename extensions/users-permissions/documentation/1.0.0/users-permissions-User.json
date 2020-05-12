@@ -1245,7 +1245,7 @@
               }
             }
           },
-          "course": {
+          "user_detail": {
             "required": [
               "id"
             ],
@@ -1253,117 +1253,37 @@
               "id": {
                 "type": "string"
               },
-              "name": {
+              "firstname": {
                 "type": "string"
               },
-              "description": {
+              "lastname": {
                 "type": "string"
               },
-              "duration": {
-                "type": "number"
-              },
-              "price": {
-                "type": "number"
-              },
-              "stream": {
-                "type": "string"
-              },
-              "subjects": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              }
-            }
-          },
-          "class": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "code": {
-                "type": "string"
-              },
-              "streams": {
+              "img": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "subjects": {
+              "parent_name": {
                 "type": "string"
               },
-              "courses": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "img": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
+              "school_name": {
                 "type": "string"
               },
-              "name": {
+              "address": {
                 "type": "string"
               },
-              "alternativeText": {
+              "mobile_number": {
                 "type": "string"
               },
-              "caption": {
+              "parent_mobile_number": {
                 "type": "string"
               },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
+              "subscription": {
                 "type": "string"
               },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
+              "user": {
                 "type": "string"
               }
             }
@@ -1405,10 +1325,7 @@
           "role": {
             "type": "string"
           },
-          "course": {
-            "type": "string"
-          },
-          "class": {
+          "user_detail": {
             "type": "string"
           }
         }
