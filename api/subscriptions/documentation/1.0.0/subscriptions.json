@@ -558,6 +558,9 @@
                 "type": "string"
               }
             }
+          },
+          "payment_id": {
+            "type": "string"
           }
         }
       },
@@ -570,6 +573,9 @@
             "type": "string"
           },
           "course": {
+            "type": "string"
+          },
+          "payment_id": {
             "type": "string"
           }
         }

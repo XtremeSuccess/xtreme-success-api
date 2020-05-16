@@ -633,6 +633,9 @@
               },
               "course": {
                 "type": "string"
+              },
+              "payment_id": {
+                "type": "string"
               }
             }
           },
