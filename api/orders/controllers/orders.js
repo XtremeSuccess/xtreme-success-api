@@ -1,6 +1,7 @@
 'use strict';
 const Razorpay = require('razorpay');
 const shortid = require('shortid');
+const crypto = require('crypto');
 
 const razorpay = new Razorpay({
   key_id: 'rzp_test_FFexwWi4LsHnuc',
@@ -33,5 +34,25 @@ module.exports = {
     const response = await razorpay.orders.create(options);
     const res = { ...response }
     ctx.send(res);
+  },
+
+  verifyOrder: async (ctx) => {
+    let payment_id = ctx.request.body.razorpay_payment_id;
+    let order_id = ctx.request.body.razorpay_order_id;
+    let signature = ctx.request.body.razorpay_signature;
+
+    let generatedSignature = crypto.createHmac(
+      "SHA256",
+      'XClkyWqV3uVqHBWrYjfc557R'
+    ).update(
+      razorpay_order_id + "|" + razorpay_payment_id
+    ).digest("hex");
+
+    var isSignatureValid = generatedSignature == signature;
+    if (isSignatureValid) {
+      //TODO: Send order details here
+    } else {
+      //TODO: Send error code here
+    }
   }
 };
