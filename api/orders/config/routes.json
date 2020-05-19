@@ -1,0 +1,12 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/orders",
+            "handler": "orders.getOrder",
+            "config": {
+                "policies": []
+            }
+        }
+    ]
+}
