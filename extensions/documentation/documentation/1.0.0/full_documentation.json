@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/20/2020 12:06:21 AM"
+    "x-generation-date": "05/21/2020 6:23:49 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2629,10 +2629,81 @@
     "/orders": {
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Orders"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/verify": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new orders record",
+        "responses": {
+          "200": {
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -7296,6 +7367,116 @@
             "type": "string"
           },
           "content": {
+            "type": "string"
+          }
+        }
+      },
+      "Orders": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "receipt": {
+            "type": "string"
+          },
+          "offer_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "amount_paid": {
+            "type": "integer"
+          },
+          "amount_due": {
+            "type": "integer"
+          },
+          "attempts": {
+            "type": "integer"
+          },
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "user_detail": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "NewOrders": {
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "receipt": {
+            "type": "string"
+          },
+          "offer_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "amount_paid": {
+            "type": "integer"
+          },
+          "amount_due": {
+            "type": "integer"
+          },
+          "attempts": {
+            "type": "integer"
+          },
+          "user": {
             "type": "string"
           }
         }

@@ -33,10 +33,28 @@ module.exports = {
     }
     const response = await razorpay.orders.create(options);
     const res = { ...response }
+    res.user = ctx.state.user.id;
+    console.log(res);
+    const order = {
+      order_id: res.id,
+      amount: res.amount,
+      amount_paid: res.amount_paid,
+      amount_due: res.amount_due,
+      currency: res.currency,
+      receipt: res.receipt,
+      offer_id: res.offer_id,
+      status: res.status,
+      attempts: res.attempts,
+      created_at: res.created_at,
+      user: res.user
+    }
+    let entity = await strapi.services['orders'].create(order);
     ctx.send(res);
   },
 
   verifyOrder: async (ctx) => {
+    // order_Et0zePcXRoysda
+
     let payment_id = ctx.request.body.razorpay_payment_id;
     let order_id = ctx.request.body.razorpay_order_id;
     let signature = ctx.request.body.razorpay_signature;
@@ -51,6 +69,11 @@ module.exports = {
     var isSignatureValid = generatedSignature == signature;
     if (isSignatureValid) {
       //TODO: Send order details here
+      let order = await strapi.services['orders'].findOne({
+        'order_id': razorpay_order_id
+      });
+      // fetch new details from rzorpay and update the record here
+
     } else {
       //TODO: Send error code here
     }
