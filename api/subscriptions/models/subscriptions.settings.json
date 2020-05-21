@@ -20,6 +20,9 @@
     },
     "payment_id": {
       "type": "string"
+    },
+    "order": {
+      "model": "orders"
     }
   }
 }

@@ -2,6 +2,7 @@
 const Razorpay = require('razorpay');
 const shortid = require('shortid');
 const crypto = require('crypto');
+const { sanitizeEntity } = require('strapi-utils');
 
 const razorpay = new Razorpay({
   key_id: 'rzp_test_FFexwWi4LsHnuc',
@@ -34,7 +35,7 @@ module.exports = {
     const response = await razorpay.orders.create(options);
     const res = { ...response }
     res.user = ctx.state.user.id;
-    console.log(res);
+    res.course = ctx.request.body.course;
     const order = {
       order_id: res.id,
       amount: res.amount,
@@ -46,35 +47,55 @@ module.exports = {
       status: res.status,
       attempts: res.attempts,
       created_at: res.created_at,
-      user: res.user
+      user: res.user,
+      course: res.course
     }
     let entity = await strapi.services['orders'].create(order);
     ctx.send(res);
   },
 
+  //TODO: Move the whole thing to webhook when website is done
   verifyOrder: async (ctx) => {
     // order_Et0zePcXRoysda
-
-    let payment_id = ctx.request.body.razorpay_payment_id;
-    let order_id = ctx.request.body.razorpay_order_id;
-    let signature = ctx.request.body.razorpay_signature;
+    console.log(ctx.request.body);
+    let rz_payment_id = ctx.request.body['razorpay_payment_id'];
+    let rz_order_id = ctx.request.body['razorpay_order_id'];
+    let rz_signature = ctx.request.body['razorpay_signature'];
 
     let generatedSignature = crypto.createHmac(
       "SHA256",
       'XClkyWqV3uVqHBWrYjfc557R'
     ).update(
-      razorpay_order_id + "|" + razorpay_payment_id
+      rz_order_id + "|" + rz_payment_id
     ).digest("hex");
 
-    var isSignatureValid = generatedSignature == signature;
+    var isSignatureValid = generatedSignature == rz_signature;
     if (isSignatureValid) {
-      //TODO: Send order details here
-      let order = await strapi.services['orders'].findOne({
-        'order_id': razorpay_order_id
+      console.log('Verified');
+      console.log(rz_order_id);
+      let { id, order_id } = await strapi.services['orders'].findOne({
+        'order_id': rz_order_id
       });
-      // fetch new details from rzorpay and update the record here
 
+      // Get the updated order
+      let res = await razorpay.orders.fetch(order_id);
+
+      // Create the updated order entry
+      const rzOrderUpdated = {
+        amount: res.amount,
+        amount_paid: res.amount_paid,
+        amount_due: res.amount_due,
+        currency: res.currency,
+        receipt: res.receipt,
+        offer_id: res.offer_id,
+        status: res.status,
+        attempts: res.attempts,
+      }
+      // Update the DB and return
+      let entity = await strapi.services['orders'].update({ id }, rzOrderUpdated);
+      return sanitizeEntity(entity, { model: strapi.models['orders'] });
     } else {
+      /* Remove this code from here and paste it in true */
       //TODO: Send error code here
     }
   }

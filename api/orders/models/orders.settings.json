@@ -40,6 +40,9 @@
     "user": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "course": {
+      "model": "courses"
     }
   }
 }

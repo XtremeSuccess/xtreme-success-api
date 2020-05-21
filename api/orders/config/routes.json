@@ -15,6 +15,14 @@
             "config": {
                 "policies": []
             }
+        },
+        {
+            "method": "GET",
+            "path": "/orders",
+            "handler": "orders.find",
+            "config": {
+                "policies": []
+            }
         }
     ]
 }
