@@ -1,0 +1,28 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/orders",
+            "handler": "orders.getOrder",
+            "config": {
+                "policies": []
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/orders/verify",
+            "handler": "orders.verifyOrder",
+            "config": {
+                "policies": []
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/orders",
+            "handler": "orders.find",
+            "config": {
+                "policies": []
+            }
+        }
+    ]
+}

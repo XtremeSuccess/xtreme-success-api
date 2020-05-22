@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Orders"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "order_id": {
+      "type": "string",
+      "unique": true
+    },
+    "currency": {
+      "type": "string"
+    },
+    "receipt": {
+      "type": "string"
+    },
+    "offer_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "amount_paid": {
+      "type": "integer"
+    },
+    "amount_due": {
+      "type": "integer"
+    },
+    "attempts": {
+      "type": "integer"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "course": {
+      "model": "courses"
+    }
+  }
+}
