@@ -559,9 +559,6 @@
               }
             }
           },
-          "payment_id": {
-            "type": "string"
-          },
           "order": {
             "required": [
               "id"
@@ -616,9 +613,6 @@
             "type": "string"
           },
           "course": {
-            "type": "string"
-          },
-          "payment_id": {
             "type": "string"
           },
           "order": {

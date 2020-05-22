@@ -18,9 +18,6 @@
     "course": {
       "model": "courses"
     },
-    "payment_id": {
-      "type": "string"
-    },
     "order": {
       "model": "orders"
     }

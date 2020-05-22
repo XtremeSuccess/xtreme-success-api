@@ -51,7 +51,7 @@ module.exports = {
       course: res.course
     }
     let entity = await strapi.services['orders'].create(order);
-    ctx.send(res);
+    return sanitizeEntity(entity, { model: strapi.models['orders'] });
   },
 
   //TODO: Move the whole thing to webhook when website is done
