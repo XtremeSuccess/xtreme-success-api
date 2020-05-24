@@ -2,11 +2,13 @@
 const Razorpay = require('razorpay');
 const shortid = require('shortid');
 const crypto = require('crypto');
+const auth = require('../../auth-details');
+
 const { sanitizeEntity } = require('strapi-utils');
 
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_FFexwWi4LsHnuc',
-  key_secret: 'XClkyWqV3uVqHBWrYjfc557R',
+  key_id: auth.key_id,
+  key_secret: auth.key_secret,
 });
 /**
  * A set of functions called "actions" for `orders`
@@ -54,22 +56,22 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models['orders'] });
   },
 
-  //TODO: Move the whole thing to webhook when website is done
   verifyOrder: async (ctx) => {
-    // order_Et0zePcXRoysda
     console.log(ctx.request.body);
     let rz_payment_id = ctx.request.body['razorpay_payment_id'];
     let rz_order_id = ctx.request.body['razorpay_order_id'];
     let rz_signature = ctx.request.body['razorpay_signature'];
 
+    // Calculate the checksum
     let generatedSignature = crypto.createHmac(
       "SHA256",
-      'XClkyWqV3uVqHBWrYjfc557R'
+      auth.key_secret
     ).update(
       rz_order_id + "|" + rz_payment_id
     ).digest("hex");
 
     var isSignatureValid = generatedSignature == rz_signature;
+    // Check if signature is valid
     if (isSignatureValid) {
       console.log('Verified');
       console.log(rz_order_id);
@@ -95,8 +97,11 @@ module.exports = {
       let entity = await strapi.services['orders'].update({ id }, rzOrderUpdated);
       return sanitizeEntity(entity, { model: strapi.models['orders'] });
     } else {
-      /* Remove this code from here and paste it in true */
-      //TODO: Send error code here
+      let error = {
+        error: true,
+        message: "Payment verification failed. Please contact customer support."
+      }
+      return error;
     }
   }
 };
