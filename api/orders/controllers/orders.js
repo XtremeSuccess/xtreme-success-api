@@ -57,7 +57,6 @@ module.exports = {
   },
 
   verifyOrder: async (ctx) => {
-    console.log(ctx.request.body);
     let rz_payment_id = ctx.request.body['razorpay_payment_id'];
     let rz_order_id = ctx.request.body['razorpay_order_id'];
     let rz_signature = ctx.request.body['razorpay_signature'];
